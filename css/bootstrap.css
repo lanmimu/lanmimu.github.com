@@ -6105,10 +6105,10 @@ a.badge:focus {
 USER DEFINED STYLES
 ------------------------*/
 .bg1{background:url(../img/bg1.jpg)  repeat-x;e9e7cf }
-.bg2{background:#e9e7cf; overflow:hidden;}
+.bg2{background:#f5f2f2; overflow:hidden;}
 .bg3{background:#333f45; overflow:hidden; padding-top:60px; padding-bottom:60px;}
 .wrap { width:100%; overflow:hidden;}
-.spacing-top-bottom { padding-top:60px; padding-bottom:60px;}
+.spacing-top-bottom { padding-top:30px; padding-bottom:30px;}
 
 .bdr-bottom { border-bottom:1px solid #c7c5b2; padding-bottom:60px;}
 .big-heading { font-size:60px; line-height:70px;}
