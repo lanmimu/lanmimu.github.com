@@ -757,22 +757,23 @@ h6 small {
   color: #999999;
 }
 
+ 
+
 h1,
 h2,
 h3 {
   
-}
-p {font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #868480;}
+} 
+  
+p {font-family: "Microsoft YaHei", "Helvetica Neue", "Helvetica", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;  text-indent:2em;
+  color: #817c7c;}
 h1 {
   font-size: 24px;
   color:#5a8fac;
   font-weight:normal;
   text-shadow: 0 1px 0 #ffffff;
- 
-  
 }
 
 h2 {
@@ -6102,7 +6103,7 @@ a.badge:hover,
 USER DEFINED STYLES
 ------------------------*/
 .bg1{background:url(../img/bg1.jpg)  repeat-x;e9e7cf }
-.bg2{background:#f5f2f2; overflow:hidden;}
+.bg2{background:#ffffff; overflow:hidden;}
 .bg3{background:#333f45; overflow:hidden; padding-top:60px; padding-bottom:60px;}
 .wrap { width:100%; overflow:hidden;}
 .spacing-top-bottom { padding-top:30px; padding-bottom:30px;}
