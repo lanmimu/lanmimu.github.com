@@ -71,7 +71,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 
-a:focus {
+/*a:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -80,7 +80,7 @@ a:focus {
 a:hover,
 a:active {
   outline: 0;
-}
+}*/
 
 sub,
 sup {
@@ -178,7 +178,7 @@ textarea {
   }
   a,
   a:visited {
-    text-decoration: underline;
+    text-decoration:none;
   }
   a[href]:after {
     content: " (" attr(href) ")";
@@ -238,10 +238,7 @@ a {
 }
 
 a:hover,
-a:focus {
-  color: #005580;
-  text-decoration: underline;
-}
+ 
 
 .img-rounded {
   -webkit-border-radius: 6px;
@@ -5624,11 +5621,11 @@ a.thumbnail:focus {
 a.label:hover,
 a.label:focus,
 a.badge:hover,
-a.badge:focus {
+/*a.badge:focus {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-}
+}*/
 
 .label-important,
 .badge-important {
@@ -6110,13 +6107,13 @@ USER DEFINED STYLES
 .wrap { width:100%; overflow:hidden;}
 .spacing-top-bottom { padding-top:30px; padding-bottom:30px;}
 
-.bdr-bottom { border-bottom:1px solid #c7c5b2; padding-bottom:60px;}
+.bdr-bottom { border-bottom:1px solid #c7c5b2; padding-bottom:10px;}
 .big-heading { font-size:60px; line-height:70px;}
 
 ul.lists { margin:0px;}
 .lists li {line-height:30px; list-style:url(../img/footer-arrow.png)inside;line-height:30px;   }
 .lists li a { color:#5a8fac; font-size:14px; font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;text-shadow: 0 1px 0 #000000;  }
-.lists li a:hover { color:#e9e7cf; text-decoration:none;}
+/*.lists li a:hover { color:#e9e7cf; text-decoration:none;}*/
 
 h1.footer-heading { color:#e9e7cf; padding-bottom:10px; text-shadow: 0 1px 0 #000000;}
 .social { width:auto;  overflow:hidden; margin:0px; padding:0px;}
