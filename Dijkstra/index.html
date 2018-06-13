@@ -1,0 +1,172 @@
+﻿<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Paradiso Wordpress Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Le styles -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="icon" href="../img/zb.jpg">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<!-- Main menu starts here -->
+ 
+
+<!-- Main Menu end -->
+<div class="wrap bg1">
+  <div class="container"> <!-- Header starts -->
+    <div class="hero-unit" style="padding-top:40px">      
+        <div >
+            <!--    <img  src="img/zb.jpg"/>-->
+            <h1>LeungMing.Ng</h1>
+            <h2 class="">A bad day , A bad life .</h2>      
+        </div>   
+        <div class="row-fluid" >
+        <table style=" width:100%;color:#e9e7cf;text-align:right;font-size:large"><tr><td ><a href="../index.html">首页</a></td><td style="width:80px">杂谈</td><td style="width:80px">足迹</td><td style="width:90px">github</td></tr></table>
+       
+            <br />
+        </div> 
+    </div> 
+  </div>
+  <!-- header end --> 
+</div>
+ 
+
+<div class="wrap bg2  spacing-top-bottom">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9 " > 
+          <div class="tab-content  pad-top  bdr-bottom">
+            <div class="tab-pane active" >
+                <div class="navbar-text"><h1>Dijkstra算法简介及其实现 </h1> </div>
+            </div>
+            <p><br /></p>
+            <div class="navbar-text">                
+                <p><h3>一、Dijkstra算法简介</h3></p>
+                <div  style="text-indent:2em">
+                    <h4  style="text-indent:2em"><p>学过运筹学或数据结构的朋友都知道Dijkstra算法。工程中经常遇到求解最短路径的问题，如物流运输、快递线路选择等。</p><p>所谓最短路径是指：假设从出发地到目的地有很多条路径可以选择，必然会存在一条路径，使得其中的权重（距离、时间等）最小。
+                    </p><p>Dijkstra算法就是求解最短路径方法中的一种。  </p> </h4>   
+                </div>     
+                <p><br /></p>
+                <p><h3>二、问题描述</h3></p>
+                <div  style="text-indent:2em">
+                    <h4 ><p>为了简化问题，现把问题描述为：假设给定一个连通图和起始顶点，求出该顶点到其它任意顶点的最短路径。进一步约定如下： </p></h4>
+                    <h5 style="text-indent:1em"><ul>
+                        <li style="list-style-type:none;">1、该连通图为无向连通图</li>
+                        <li style="list-style-type:none;">2、顶点之间有权重（距离）</li>
+                        </ul>
+                    </h5>                  
+                    <h4  ><p>如下图，举个例子，我们要从地点V1去地点V8，可以有以下路径选择：</p></h4>
+                     <h5 style="text-indent:1em"><ul>
+                        <li style="list-style-type:none;">1、V1-V3-V8</li>
+                        <li style="list-style-type:none;">2、V1-V3-V6-V8</li>
+                        <li style="list-style-type:none;">3、V1-V2-V6-V8</li>
+                        <li style="list-style-type:none;">4、V1-V2-V5-V7-V8</li>
+                        <li style="list-style-type:none;">......</li>
+                        </ul>
+                    </h5> 
+                    <h4  ><p>可以发现，有很多路径，如果顶点再增加一些，会让人数不过来。</p></h4> <h4  ><p>
+                    现在，我们就是要计算从顶点V1到其它任意顶点的最短路径（距离）。 </p></h4>
+                    <p><br /></p>
+                    <div "> 
+                        <div class="row-fluid">
+                            <div class="span2"  ></div>
+                            <div class="span8 " ><img style="width:500"  src="../img/tu1.png"/></div><div class="span2"  ></div> 
+                        </div>
+                    </div>
+                </div>    
+                <p><br /></p>
+                <p><h3>三、算法思路</h3></p>
+                <div  style="text-indent:2em">
+                    <h4 ><p>Dijkstra算法的核心可以理解为：   </p></h4>                   
+                    <h5 style="text-indent:1em"><ul>
+                        <li style="list-style-type:none;">1、将顶点分为2个集合，一个是已探明的（初始只包含起始顶点一个），一个是未探明的（初始包含起始顶点以外所有顶点）。</li>
+                        <li style="list-style-type:none;">2、其中，已探明集合是指在<font color="red">该集合内</font>，已求出起始顶点到其它所有顶点的最短路径。</li>
+                        <li style="list-style-type:none;">3、每次从未探明集合里寻找与已探明集合里所有顶点<font color="red">直接相连</font>的顶点，加入到已探明集合。注意，直接相连就是：两点之间直线相连没有经过其它顶点。</li>
+                        <li style="list-style-type:none;">4、在<font color="red">已探明集合</font>内，重新计算起始顶点到其它顶点的最短路径。</li>
+                        <li style="list-style-type:none;">5、重复步骤3、4，直至未探明集合为空。此时已探明集合包含了所有顶点，并且已经计算出了起始顶点和其它所有顶点的最短路径。</li>
+                        </ul>
+                    </h5>                  
+                    
+                </div>    
+                <p><br /></p>
+                <p><h3>四、算法实现</h3></p>
+                <div  style="text-indent:2em">
+                    <h4 ><p>以上图为例，具体计算步骤如下： </p></h4>
+                    <h5 style="text-indent:1em"><ul>
+                        <li style="list-style-type:none;">1、设集合S为已探明集合，初始S={ V1 }；设集合N为每次探到的新增的探明顶点集合，初始N=S={ V1 }；
+                        设集合L为最短路线集合，初始L={}； 设T为未探明集合，初始T={V2,V3,V4,V5,V6,V7,V8,V9,V10}。</li>
+                        <li style="list-style-type:none;">2、从新探明集合N中取一个顶点V1，寻找到它的直连顶点V2，V3和V4，把它们加入到S，得到S={ V1,V2,V3,V4 }，则T为{V5,V6,V7,V8,V9,V10}。
+                        </li>
+                        </ul>
+                    </h5>                  
+                    
+                </div>    
+            </div>
+          </div>            
+      </div>
+      
+      <div class="span3"  style="">
+        <div class="">
+         <h1>杂谈</h1>      
+         </div>
+        <ul class="nav nav-tabs nav-stacked ">        
+          <li><a href="index.html"><i class=""></i>Dijkstra算法简介及其实现 </a></li>
+          <li><a href="#"><i class=""></i>使用swagger来管理webapi </a></li>
+          <li><a href="#"><i class=""></i>swagger自定义传入参数以及枚举类型参数  </a></li>           
+        </ul>
+        <div class="">
+         <h1>足迹</h1>      
+         </div>
+        <ul class="nav nav-tabs nav-stacked ">
+           <li><a href="#"><i class=""></i>2018年4月(0) </a></li>
+          <li><a href="#"><i class=""></i>2018年5月(0) </a></li>
+          <li><a href="#"><i class=""></i>2018年6月(3)   </a></li>      
+        </ul>
+         <div class="">
+         <h1>github</h1>      
+         </div>
+        <ul class="nav nav-tabs nav-stacked ">
+          <li><a href="https://github.com/lanmimu"><i class=""></i>https://github.com/lanmimu </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <br/> 
+  
+</div>
+
+<div class="wrap bg3 spacing-top-bottom">
+	<div class="container">
+        <div class="row-fluid"> 
+          <div class="span4">
+       	    <h1 class="footer-heading">分享</h1>
+             <div class="social">
+                  <ul>
+              	   <li>QQ：565720002</li>
+                   <li>WeChat：LeungMingNg</li>
+                   <li>Email：lanmimu@aliyun.com</li>
+                  </ul> 
+            </div> 
+          </div>
+          <div class="span8"></div>
+        </div>
+    </div> 
+</div>
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="js/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
